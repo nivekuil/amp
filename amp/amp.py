@@ -12,7 +12,11 @@ def main():
   if not input:
     with open(pidfile, 'r') as f:
       pid = int(f.read())
-      os.kill(pid, SIGTERM)
+      try:
+        os.kill(pid, SIGTERM)
+        print("Playback stopped.")
+      except:
+        print("Usage: blah blah.")
       return
 
   query_string = urllib.parse.urlencode({"search_query" : input})
