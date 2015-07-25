@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 import urllib.request, urllib.parse
 import os, sys, re, subprocess
-from daemonize import Daemonize
 from signal import SIGTERM
 
-def play():
-    subprocess.call(['mpv', url, "--no-video", "--really-quiet"])
-
 def main():
+  pidfile = "/tmp/imp.pid"
+
   # Take each command line argument and join as a string
   input = "".join(sys.argv[1:])
+
+  if not input:
+    with open(pidfile, 'r') as f:
+      pid = int(f.read())
+      os.kill(pid, SIGTERM)
+      return
 
   query_string = urllib.parse.urlencode({"search_query" : input})
   html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query_string)
@@ -17,9 +21,11 @@ def main():
   url = "http://www.youtube.com/watch?v=" + search_results[0]
   print("Now playing: " + url)
 
-  pid = "/tmp/test.pid"
-  daemon = Daemonize(app="imp", pid=pid, action=play)
-  daemon.start()
+  with open(pidfile, 'w') as f:
+
+    player = subprocess.Popen(['mpv', url, "--no-video", "--really-quiet"])
+    print(player.pid, end='', file=f)
+
 
 if __name__ == "__main__":
   main()
