@@ -122,5 +122,4 @@ class Player:
         self.start()
 
     def run(self):
-        print("Now playing: " + self.url)
         subprocess.call(['mpv', self.url, "--no-video", "--really-quiet"])

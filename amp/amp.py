@@ -5,6 +5,7 @@ import re
 import subprocess
 import urllib.request
 import urllib.parse
+import pafy
 from player import Player
 from util import kill_process_tree
 
@@ -42,14 +43,17 @@ def main():
         return
 
     query_string = urllib.parse.urlencode({"search_query": input})
+
     html_content = urllib.request.urlopen("http://www.youtube.com/results?" +
                                           query_string)
+
     search_results = re.findall(r'href=\"\/watch\?v=(.{11})',
                                 html_content.read().decode())
 
     url = "http://www.youtube.com/watch?v=" + search_results[0]
-
+    video_data = pafy.new(url)
     player = Player(pidfile, url)
+    print("Now playing: " + video_data.title + " (" + video_data.duration + ")")
     player.start()
 
 if __name__ == "__main__":
