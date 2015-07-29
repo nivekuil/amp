@@ -7,6 +7,7 @@ import time
 import atexit
 import signal
 import subprocess
+import pafy
 from util import kill_process_tree
 
 
@@ -81,6 +82,9 @@ class Player:
             kill_process_tree(pid)
             self.delpid()
 
+        video_data = pafy.new(self.url)
+        print("Now playing: " + video_data.title + " [" + video_data.duration +
+              "]")
         self.daemonize()
         self.run()
 
