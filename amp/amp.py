@@ -53,7 +53,7 @@ def main():
     url = "http://www.youtube.com/watch?v=" + search_results[0]
     video_data = pafy.new(url)
     player = Player(pidfile, url)
-    print("Now playing: " + video_data.title + " (" + video_data.duration + ")")
+    print("Now playing: " + video_data.title + " [" + video_data.duration + "]")
     player.start()
 
 if __name__ == "__main__":
