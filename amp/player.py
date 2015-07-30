@@ -69,7 +69,7 @@ class Player:
     def delpid(self):
         os.remove(self.pidfile)
 
-    def start(self):
+    def start(self, show_video=False):
         try:
             with open(self.pidfile, 'r') as f:
                 pid = int(f.read().strip())
@@ -85,8 +85,11 @@ class Player:
         video_data = pafy.new(self.url)
         print("Now playing: " + video_data.title + " [" + video_data.duration +
               "]")
+        if show_video:
+            print("Showing video in an external window.")
+
         self.daemonize()
-        self.run()
+        self.run(show_video)
 
     def stop(self):
         """Stop the daemon."""
@@ -125,5 +128,8 @@ class Player:
         self.stop()
         self.start()
 
-    def run(self):
-        subprocess.call(['mpv', self.url, "--no-video", "--really-quiet"])
+    def run(self, show_video):
+        subprocess_args = ['mpv', self.url, "--really-quiet"]
+        if not show_video:
+            subprocess_args.append("--no-video")
+        subprocess.call(subprocess_args)
