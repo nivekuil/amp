@@ -25,14 +25,8 @@ def main():
     parser.add_argument('-v', action='store_true',
                         help='show the video as well')
 
-    args = parser.parse_known_args()
-
-    # Process the search terms, taking each argument and forming a string
-    if args[1]:
-        input = " ".join(args[1])
-
-    # If amp is called with no search terms, try to stop playback instead.
-    else:
+    # If amp is called with no arguments, try to stop playback.
+    if len(sys.argv) == 1:
         try:
             with open(pidfile, 'r') as f:
                 # Read the pidfile to get the pid of the process to kill.
@@ -49,6 +43,11 @@ def main():
             parser.print_help()
         sys.exit(0)
 
+    args = parser.parse_known_args()
+
+    # Process the search terms, taking each argument and forming a string
+    if args[1]:
+        input = " ".join(args[1])
 
     query_string = urllib.parse.urlencode({"search_query": input})
 
