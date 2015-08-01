@@ -1,0 +1,16 @@
+Amp is a command-line interface to YouTube that lets you play music with minimal disturbance to your workflow.
+
+* Usage
+usage: amp.py [-h] [-v]
+
+Pass search terms to YouTube and play the first result in a background
+process. Call again with no arguments to stop playback.
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -v          show the video as well
+
+* TODO
+- List view of songs to choose results from
+- Filter by duration
+- Queue songs
