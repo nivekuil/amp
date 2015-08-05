@@ -5,6 +5,20 @@ Amp is a command-line interface to YouTube that lets you play music with minimal
 $ amp sotn soundtrack
 Now playing: Full Castlevania: Symphony of the Night OST [01:08:06]
 
+$ amp
+Playback paused. Type 'amp' again to resume.
+
+$ amp
+Playback resumed.
+
+$ amp yellow
+Stopping current song..
+Now playing: Coldplay - Yellow [00:04:33]
+
+$ amp yellow beatles
+Stopping current song..
+Now playing: the beatles- yellow submarine(LYRICS) [00:02:38]
+
 $ ...
 #+END_EXAMPLE
 
