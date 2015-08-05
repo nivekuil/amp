@@ -9,6 +9,7 @@ import argparse
 import pafy
 from player import Player
 from util import kill_process_tree
+from util import toggle_process_tree
 
 USAGE = """Usage: amp [SEARCH TERMS]
 Pass search terms to YouTube and play the first result in a background process.
@@ -20,22 +21,21 @@ def main():
 
     parser = argparse.ArgumentParser(description="""Pass search terms to YouTube
     and play the first result in a background process.
-    Call again with no arguments to stop playback.""")
+    Call again with no arguments to pause or resume playback.""")
 
     parser.add_argument('-v', action='store_true',
                         help='show the video as well')
 
-    # If amp is called with no arguments, try to stop playback.
-    if len(sys.argv) == 1:
+    args = parser.parse_known_args()
+
+    # If amp is called with no search terms, try to pause playback.
+    if len(args[1]) == 0:
         try:
             with open(pidfile, 'r') as f:
                 # Read the pidfile to get the pid of the process to kill.
                 pid = int(f.read().strip())
-                # If the pidfile did exist, kill the process and all of its
-                # children, and then remove the pidfile.
-                kill_process_tree(pid)
-                os.remove(pidfile)
-                print("Playback stopped.")
+
+                toggle_process_tree(pid)
 
         except:
             # If the pidfile doesn't exist, then playback is not happening.
@@ -43,7 +43,6 @@ def main():
             parser.print_help()
         sys.exit(0)
 
-    args = parser.parse_known_args()
 
     # Process the search terms, taking each argument and forming a string
     if args[1]:
