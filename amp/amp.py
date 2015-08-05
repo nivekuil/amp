@@ -26,6 +26,9 @@ def main():
     parser.add_argument('-v', action='store_true',
                         help='show the video as well')
 
+    parser.add_argument('-k', action='store_true',
+                        help='kill playback process')
+
     args = parser.parse_known_args()
 
     # If amp is called with no search terms, try to pause playback.
@@ -35,7 +38,15 @@ def main():
                 # Read the pidfile to get the pid of the process to kill.
                 pid = int(f.read().strip())
 
-                toggle_process_tree(pid)
+                # If the -k flag is set, kill the process tree completely.
+                if args[0].k:
+                    kill_process_tree(pid)
+                    os.remove(pidfile)
+                    print('Killed playback process.')
+
+                # Otherwise, pause or resume the process tree.
+                else:
+                    toggle_process_tree(pid)
 
         except:
             # If the pidfile doesn't exist, then playback is not happening.
