@@ -1,4 +1,4 @@
-Amp is a command-line interface to YouTube that lets you play music with minimal disturbance to your workflow.
+Amp is a command-line interface to YouTube that lets you play music with minimal disturbance to your workflow.  It takes arguments in the form of YouTube search terms and plays the first result in a background process.
 
 * Usage
 #+BEGIN_EXAMPLE
