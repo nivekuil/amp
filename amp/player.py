@@ -17,9 +17,11 @@ class Player:
     http://jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/#c35
     """
 
-    def __init__(self, pidfile, url):
+    def __init__(self, pidfile, url, show_video=False, verbose=False):
         self.pidfile = pidfile
         self.url = url
+        self.show_video = show_video
+        self.verbose = verbose
 
     def daemonize(self):
         """Daemonize class. UNIX double fork mechanism."""
@@ -69,7 +71,7 @@ class Player:
     def delpid(self):
         os.remove(self.pidfile)
 
-    def start(self, show_video=False):
+    def start(self):
         try:
             with open(self.pidfile, 'r') as f:
                 pid = int(f.read().strip())
@@ -85,11 +87,15 @@ class Player:
         video_data = pafy.new(self.url)
         print("Now playing: " + video_data.title + " [" + video_data.duration +
               "]")
-        if show_video:
+
+        # Handle options
+        if self.verbose:
+            print("URL: " + self.url)
+        if self.show_video:
             print("Showing video in an external window.")
 
         self.daemonize()
-        self.run(show_video)
+        self.run()
 
     def stop(self):
         """Stop the daemon."""
@@ -128,8 +134,9 @@ class Player:
         self.stop()
         self.start()
 
-    def run(self, show_video):
-        subprocess_args = ['mpv', self.url, "--really-quiet"]
-        if not show_video:
-            subprocess_args.append("--no-video")
+    def run(self):
+        if self.show_video:
+            subprocess_args = ['mpv', self.url, "--really-quiet"]
+        else:
+            subprocess_args = ['mpv', self.url, "--really-quiet", "--no-video"]
         subprocess.call(subprocess_args)

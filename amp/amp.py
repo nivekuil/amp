@@ -29,6 +29,9 @@ def main():
     parser.add_argument('-k', action='store_true',
                         help='kill playback process')
 
+    parser.add_argument('--verbose', action='store_true',
+                        help='show verbose output')
+
     args = parser.parse_known_args()
 
     # If amp is called with no search terms, try to pause playback.
@@ -68,8 +71,9 @@ def main():
                                 html_content.read().decode())
 
     url = "http://www.youtube.com/watch?v=" + search_results[0]
-    player = Player(pidfile, url)
-    player.start(show_video=args[0].v)
+    player = Player(pidfile, url,
+                    show_video=args[0].v, verbose=args[0].verbose)
+    player.start()
 
 if __name__ == "__main__":
     main()
