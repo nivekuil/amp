@@ -23,6 +23,21 @@ class Player:
         self.show_video = show_video
         self.verbose = verbose
 
+
+    def print_info(self):
+        """Prints video information and usage output to stdout"""
+
+        video_data = pafy.new(self.url)
+        print("Now playing: " + video_data.title + " [" + video_data.duration +
+              "]")
+
+        # Handle passed-in options
+        if self.verbose:
+            print("URL: " + self.url)
+            print("Description: " + video_data.description)
+        if self.show_video:
+            print("Showing video in an external window.")
+
     def daemonize(self):
         """Daemonize class. UNIX double fork mechanism."""
 
@@ -84,15 +99,7 @@ class Player:
             kill_process_tree(pid)
             self.delpid()
 
-        video_data = pafy.new(self.url)
-        print("Now playing: " + video_data.title + " [" + video_data.duration +
-              "]")
-
-        # Handle options
-        if self.verbose:
-            print("URL: " + self.url)
-        if self.show_video:
-            print("Showing video in an external window.")
+        self.print_info()
 
         self.daemonize()
         self.run()
