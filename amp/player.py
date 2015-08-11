@@ -8,7 +8,7 @@ import atexit
 import signal
 import subprocess
 import pafy
-from util import kill_process_tree
+from process import kill_process_tree
 
 
 class Player:

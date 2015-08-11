@@ -8,13 +8,14 @@ import urllib.parse
 import argparse
 import pafy
 from player import Player
-from util import kill_process_tree
-from util import toggle_process_tree
+from process import kill_process_tree
+from process import toggle_process_tree
 
 USAGE = """Usage: amp [SEARCH TERMS]
 Pass search terms to YouTube and play the first result in a background process.
 Call again with no arguments to stop playback.
 """
+
 
 def main():
     pidfile = "/tmp/amp.pid"
@@ -56,7 +57,6 @@ def main():
             # Print the usage message and return.
             parser.print_help()
         sys.exit(0)
-
 
     # Process the search terms, taking each argument and forming a string
     if args[1]:
