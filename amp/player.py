@@ -8,7 +8,7 @@ import atexit
 import signal
 import subprocess
 import pafy
-from process import kill_process_tree
+from .process import kill_process_tree
 
 
 class Player:
@@ -26,6 +26,7 @@ class Player:
 
     def print_info(self):
         """Prints video information and usage output to stdout"""
+
 
         video_data = pafy.new(self.url)
         print("Now playing: " + video_data.title + " [" + video_data.duration +
