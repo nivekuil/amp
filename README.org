@@ -2,8 +2,8 @@ Amp is a command-line interface to YouTube that lets you play music with minimal
 
 * Usage
 #+BEGIN_EXAMPLE
-$ amp sotn soundtrack
-Now playing: Full Castlevania: Symphony of the Night OST [01:08:06]
+$ amp sotc ost
+Now playing: Shadow of the Colossus OST (Playstation 2) [01:15:51]
 
 $ amp
 Playback paused. Type 'amp' again to resume.
@@ -11,7 +11,7 @@ Playback paused. Type 'amp' again to resume.
 $ amp
 Playback resumed.
 
-$ amp yellow
+$ amp
 Stopping current song..
 Now playing: Coldplay - Yellow [00:04:33]
 
@@ -23,6 +23,16 @@ Showing video in an external window.
 $ ...
 #+END_EXAMPLE
 
+* Installation
+** Requirements
+- Python 3.3 or newer
+- A up-to-date version of [[https://github.com/mpv-player/mpv][mpv]]
+
+
+Once both of these requirements are met, amp can be installed from pip (with root privileges).
+#+BEGIN_EXAMPLE
+# pip install amp
+#+END_EXAMPLE
 * Planned features/fixes
 - List multiple results to choose a song from
 - Filter by duration
