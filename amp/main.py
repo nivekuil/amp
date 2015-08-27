@@ -73,7 +73,6 @@ def main():
     url = "https://www.youtube.com/watch?v=" + search_results[0]
     player = Player(pidfile, url,
                     show_video=args[0].v, verbose=args[0].verbose)
-    print("HALLO")
     player.start()
 
 if __name__ == '__main__':
