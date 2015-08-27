@@ -29,6 +29,7 @@ $ ...
 - Queue songs
 - Song history
 - Handle invalid options more gracefully
+- When external dependency fails, show error output
 
 * Troubleshooting
 If playback ends abnormally before anything starts playing, it might be an issue with one of amp's dependencies.  Try using ==amp --verbose== to get the URL of the video, and then play the URL with mpv directly.  If that works, then please submit an issue (or pull request!).

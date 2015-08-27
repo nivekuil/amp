@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
 import sys
 import re
@@ -7,9 +7,9 @@ import urllib.request
 import urllib.parse
 import argparse
 import pafy
-from player import Player
-from process import kill_process_tree
-from process import toggle_process_tree
+from .player import Player
+from .process import kill_process_tree
+from .process import toggle_process_tree
 
 USAGE = """Usage: amp [SEARCH TERMS]
 Pass search terms to YouTube and play the first result in a background process.
@@ -73,7 +73,8 @@ def main():
     url = "https://www.youtube.com/watch?v=" + search_results[0]
     player = Player(pidfile, url,
                     show_video=args[0].v, verbose=args[0].verbose)
+    print("HALLO")
     player.start()
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    sys.exit(main())
