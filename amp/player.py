@@ -10,6 +10,10 @@ import subprocess
 import pafy
 from .process import kill_process_tree
 
+# Temporary change logging level until a bug with pafy is fixed to suppress
+# unnecessary error
+import logging
+logging.getLogger().setLevel(logging.ERROR)
 
 class Player:
 
