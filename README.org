@@ -31,7 +31,7 @@ $ ...
 
 Once both of these requirements are met, amp can be installed from pip (with root privileges).
 #+BEGIN_EXAMPLE
-# pip install amp
+# pip install amp-player
 #+END_EXAMPLE
 * Planned features/fixes
 - List multiple results to choose a song from
