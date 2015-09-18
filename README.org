@@ -1,4 +1,4 @@
-Amp is a command-line interface to YouTube that lets you play music with minimal disturbance to your workflow.  It takes arguments in the form of YouTube search terms and plays the first result in a background process.
+Amp (asynchronous music player) is a command-line interface to YouTube that lets you play music with minimal disturbance to your workflow.  It takes arguments in the form of YouTube search terms and plays the first result in a background process.
 
 * Usage
 #+BEGIN_EXAMPLE
@@ -29,7 +29,7 @@ $ ...
 - A up-to-date version of [[https://github.com/mpv-player/mpv][mpv]]
 
 
-Once both of these requirements are met, amp can be installed from pip (with root privileges).
+Once you have both of these, amp can be installed from pip (with root privileges).
 #+BEGIN_EXAMPLE
 # pip install amp-player
 #+END_EXAMPLE
