@@ -11,7 +11,7 @@ Playback paused. Type 'amp' again to resume.
 $ amp
 Playback resumed.
 
-$ amp
+$ amp yellow
 Stopping current song..
 Now playing: Coldplay - Yellow [00:04:33]
 
