@@ -12,7 +12,7 @@ setup(
     license='GPL3',
     entry_points={'console_scripts': ['amp = amp.main:main']},
     package_dir = {'', 'amp'},
-    packages = 'amp',
+    packages = ['amp'],
     install_requires=['pafy >= 0.3.74'],
     classifiers = [
         'Programming Language :: Python :: 3',
