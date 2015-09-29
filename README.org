@@ -27,12 +27,20 @@ $ ...
 ** Requirements
 - Python 3.3 or newer
 - A up-to-date version of [[https://github.com/mpv-player/mpv][mpv]]
+- An up-to-date version of pip, setuptools, etc.
 
-
-Once you have both of these, amp can be installed from pip (with root privileges).
+Once you have all of these, amp can be installed from pip (with root privileges).
 #+BEGIN_EXAMPLE
 # pip install amp-player
 #+END_EXAMPLE
+
+Building amp from source is easy too:
+#+BEGIN_EXAMPLE
+$ git clone https://github.com/nivekuil/amp.git
+$ cd amp
+# python setup.py install
+#+END_EXAMPLE
+
 * Planned features/fixes
 - List multiple results to choose a song from
 - Filter by duration
