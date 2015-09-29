@@ -31,7 +31,6 @@ class Player:
     def print_info(self):
         """Prints video information and usage output to stdout"""
 
-
         video_data = pafy.new(self.url)
         print("Now playing: " + video_data.title + " [" + video_data.duration +
               "]")

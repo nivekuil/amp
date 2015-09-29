@@ -1,8 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='amp-player',
-    version='0.1.0',
+    packages = find_packages(),
+    version='0.1.3',
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',
