@@ -13,7 +13,7 @@ setup(
     entry_points={'console_scripts': ['amp = amp.main:main']},
     package_dir = {'', 'amp'},
     packages = ['amp'],
-    install_requires=['pafy >= 0.3.74'],
+    install_requires=['pafy >= 0.3.74', 'psutil'],
     classifiers = [
         'Programming Language :: Python :: 3',
     ],
