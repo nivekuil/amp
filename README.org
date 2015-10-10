@@ -2,7 +2,11 @@ Amp (asynchronous music player) is a command-line interface to YouTube that lets
 
 * Usage
 #+BEGIN_EXAMPLE
+$ amp portugal hard being wizard
+Now playing: It's Complicated Being A Wizard (full) - Portugal. The Man [00:23:01]$
+
 $ amp sotc ost
+Stopping current song..
 Now playing: Shadow of the Colossus OST (Playstation 2) [01:15:51]
 
 $ amp
