@@ -22,7 +22,8 @@ def main():
 
     parser = argparse.ArgumentParser(description="""Pass search terms to YouTube
     and play the first result in a background process.
-    Call again with no arguments to pause or resume playback.""")
+    Call again with no arguments to pause or resume playback.""",
+                                     prog='amp',)
 
     parser.add_argument('-v', action='store_true',
                         help='show the video as well')
@@ -32,6 +33,8 @@ def main():
 
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
+
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.5')
 
     args = parser.parse_known_args()
 
@@ -61,6 +64,10 @@ def main():
     # Process the search terms, taking each argument and forming a string
     if args[1]:
         input = " ".join(args[1])
+
+    else:
+        parser.print_help()
+        sys.exit(0)
 
     query_string = urllib.parse.urlencode({"search_query": input})
 
