@@ -7,9 +7,9 @@ import urllib.request
 import urllib.parse
 import argparse
 import pafy
-from player import Player
-from process import kill_process_tree
-from process import toggle_process_tree
+from .player import Player
+from .process import kill_process_tree
+from .process import toggle_process_tree
 
 USAGE = """Usage: amp [SEARCH TERMS]
 Pass search terms to YouTube and play the first result in a background process.
