@@ -3,8 +3,15 @@ import os
 import sys
 import re
 import subprocess
-import urllib.request
-import urllib.parse
+try:
+    # Python 3
+    from urllib.parse import urlparse, urlencode
+    from urllib.request import urlopen
+except:
+    # Python 2
+    from urlparse import urlparse
+    from urllib import urlopen, urlencode
+
 import argparse
 import pafy
 from .player import Player
@@ -34,7 +41,7 @@ def main():
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
 
-    parser.add_argument('--version', action='version', version='%(prog)s 0.1.5')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.6')
 
     args = parser.parse_known_args()
 

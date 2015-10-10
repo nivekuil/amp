@@ -29,7 +29,7 @@ $ ...
 
 * Installation
 ** Requirements
-- Python 3.3 or newer
+- Python 3.3+ or Python 2.7+
 - A up-to-date version of [[https://github.com/mpv-player/mpv][mpv]]
 - An up-to-date version of pip, setuptools, etc.
 
