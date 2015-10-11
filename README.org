@@ -14,6 +14,10 @@ YouTube's search engine is also (mostly) smart enough to search by lyrics:
 #+BEGIN_EXAMPLE
 $ amp ah look at all the lonely people
 Now playing: the beatles "eleanor Rigby" with lyrics [00:02:07]
+
+$ amp i knew the like the back of my hand
+Stopping current song..
+Now playing: Somewhere Only We Know - Keane (Lyrics) [00:04:15]
 #+END_EXAMPLE
 
 Other usage examples:
