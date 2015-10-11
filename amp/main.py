@@ -3,14 +3,9 @@ import os
 import sys
 import re
 import subprocess
-try:
-    # Python 3
-    from urllib.parse import urlparse, urlencode
-    from urllib.request import urlopen
-except:
-    # Python 2
-    from urlparse import urlparse
-    from urllib import urlopen, urlencode
+
+from urllib.parse import urlparse, urlencode
+from urllib.request import urlopen
 
 import argparse
 import pafy
@@ -41,7 +36,7 @@ def main():
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
 
-    parser.add_argument('--version', action='version', version='%(prog)s 0.1.7')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.8')
 
     args = parser.parse_known_args()
 

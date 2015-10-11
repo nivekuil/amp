@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='amp-player',
-    version='0.1.7',
+    version='0.1.8',
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',
@@ -14,7 +14,7 @@ setup(
     packages = ['amp'],
     install_requires=['pafy', 'psutil'],
     classifiers = [
-        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
     ],
 
 )
