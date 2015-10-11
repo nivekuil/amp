@@ -8,7 +8,17 @@ Now playing: It's Complicated Being A Wizard (full) - Portugal. The Man [00:23:0
 $ amp sotc ost
 Stopping current song..
 Now playing: Shadow of the Colossus OST (Playstation 2) [01:15:51]
+#+END_EXAMPLE
 
+YouTube's search engine is also (mostly) smart enough to search by lyrics:
+#+BEGIN_EXAMPLE
+$ amp ah look at all the lonely people
+Now playing: the beatles "eleanor Rigby" with lyrics [00:02:07]
+#+END_EXAMPLE
+
+Other usage examples:
+
+#+BEGIN_EXAMPLE
 $ amp
 Playback paused. Type 'amp' again to resume.
 
@@ -26,11 +36,6 @@ Showing video in an external window.
 
 #+END_EXAMPLE
 
-YouTube's search engine is also (mostly) smart enough to search by lyrics:
-#+BEGIN_EXAMPLE
-$ amp ah look at all the lonely people
-Now playing: the beatles "eleanor Rigby" with lyrics [00:02:07]
-#+END_EXAMPLE
 
 * Installation
 ** Requirements
