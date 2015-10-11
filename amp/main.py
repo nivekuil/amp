@@ -41,7 +41,7 @@ def main():
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
 
-    parser.add_argument('--version', action='version', version='%(prog)s 0.1.6')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.7')
 
     args = parser.parse_known_args()
 
@@ -76,9 +76,9 @@ def main():
         parser.print_help()
         sys.exit(0)
 
-    query_string = urllib.parse.urlencode({"search_query": input})
+    query_string = urlencode({"search_query": input})
 
-    html_content = urllib.request.urlopen("https://www.youtube.com/results?" +
+    html_content = urlopen("https://www.youtube.com/results?" +
                                           query_string)
 
     search_results = re.findall(r'href=\"\/watch\?v=(.{11})',

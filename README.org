@@ -24,7 +24,12 @@ Stopping current song..
 Now playing: the beatles- yellow submarine(LYRICS) [00:02:38]
 Showing video in an external window.
 
-$ ...
+#+END_EXAMPLE
+
+YouTube's search engine is also (mostly) smart enough to search by lyrics:
+#+BEGIN_EXAMPLE
+$ amp ah look at all the lonely people
+Now playing: the beatles "eleanor Rigby" with lyrics [00:02:07]
 #+END_EXAMPLE
 
 * Installation
