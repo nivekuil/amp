@@ -1,8 +1,17 @@
-from setuptools import setup, find_packages
+import sys
+from distutils.core import setup
+from distutils.extension import Extension
+
+if sys.version_info[0] == 2:
+    print("Python 2.x detected.")
+    base_dir = 'python2'
+elif sys.version_info[0] == 3:
+    print("Python 3.x detected.")
+    base_dir = 'python3'
 
 setup(
     name='amp-player',
-    version='0.1.8',
+    version='0.1.14',
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',
@@ -12,9 +21,13 @@ setup(
     license='GPL3',
     entry_points={'console_scripts': ['amp = amp.main:main']},
     packages = ['amp'],
+    package_dir={
+        'amp' : base_dir + '/amp'
+    },
     install_requires=['pafy', 'psutil'],
     classifiers = [
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
     ],
 
 )
