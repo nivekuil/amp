@@ -152,4 +152,9 @@ class Player(object):
             subprocess_args = [u'mpv', self.url, u"--really-quiet"]
         else:
             subprocess_args = [u'mpv', self.url, u"--really-quiet", u"--no-video"]
-        subprocess.call(subprocess_args)
+        try:
+            subprocess.call(subprocess_args)
+        except OSError as e:
+            if e.errno == 2:
+                print("mpv cannot be found.")
+                sys.exit(1)

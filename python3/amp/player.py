@@ -38,8 +38,7 @@ class Player:
         video_data = pafy.new(self.url)
         print("Now playing: " + video_data.title + " [" + video_data.duration +
               "]")
-
-        # Handle passed-in options
+ # Handle passed-in options
         if self.verbose:
             print("URL: " + self.url)
             print("Description: " + video_data.description)
@@ -168,4 +167,9 @@ Duration: %s
             subprocess_args = ['mpv', self.url, "--really-quiet"]
         else:
             subprocess_args = ['mpv', self.url, "--really-quiet", "--no-video"]
-        subprocess.call(subprocess_args)
+        try:
+            subprocess.call(subprocess_args)
+        except OSError as e:
+            if e.errno == 2:
+                print("mpv cannot be found.")
+                sys.exit(1)
