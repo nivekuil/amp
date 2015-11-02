@@ -49,7 +49,7 @@ Showing video in an external window.
 * Installation
 ** Requirements
 - Python 3.3+ (not Python 2!)
-- A up-to-date version of [[https://github.com/mpv-player/mpv][mpv]]
+- A up-to-date version of [[https://mpv.io/installation/][mpv]]
 - An up-to-date version of pip, setuptools, etc.
 
 Once you have all of these, amp can be installed from pip (with root privileges).
