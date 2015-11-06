@@ -1,7 +1,6 @@
 Amp (asynchronous music player) is a command-line interface to YouTube that lets you find, play, and pause music with minimal disturbance to your workflow.  It takes arguments in the form of a YouTube search query and plays the first result in a background process.
 
 * Usage
-** How to listen to music with amp
 1. Open terminal
 2. Type "amp" + title, artist, lyrics, etc. phrased as a search query
 3. Close terminal or continue working without interruption
