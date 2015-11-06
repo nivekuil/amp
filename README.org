@@ -1,4 +1,4 @@
-Amp (asynchronous music player) is a command-line interface to YouTube that lets you play music with minimal disturbance to your workflow.  It takes arguments in the form of YouTube search terms and plays the first result in a background process.
+Amp (asynchronous music player) is a command-line interface to YouTube that lets you find, play, and pause music with minimal disturbance to your workflow.  It takes arguments in the form of a YouTube search query and plays the first result in a background process.
 
 * Usage
 ** How to listen to music with amp
