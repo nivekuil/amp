@@ -2,8 +2,9 @@ Amp (asynchronous music player) is a command-line interface to YouTube that lets
 
 * Usage
 1. Open terminal (recommended: a drop-down one like [[https://github.com/Guake/guake][Guake]])
-2. Type "amp " + title, artist, lyrics, etc. phrased as a search query
+2. Type "amp " + title, artist, lyrics, etc.
 ** Examples
+Phrase stuff as a search query - be lazy!
 #+BEGIN_EXAMPLE
 $ amp portugal hard being wizard
 Now playing: It's Complicated Being A Wizard (full) - Portugal. The Man [00:23:01]$
@@ -13,7 +14,7 @@ Stopping current song..
 Now playing: Shadow of the Colossus OST (Playstation 2) [01:15:51]
 #+END_EXAMPLE
 
-amp also works with lyrics, as long as there's a video with lyrics in the description:
+Some songs can be found with just the lyrics:
 #+BEGIN_EXAMPLE
 $ amp ah look at all the lonely people
 Now playing: the beatles "eleanor Rigby" with lyrics [00:02:07]
@@ -23,8 +24,7 @@ Stopping current song..
 Now playing: Somewhere Only We Know - Keane (Lyrics) [00:04:15]
 #+END_EXAMPLE
 
-Other usage examples:
-
+General usage:
 #+BEGIN_EXAMPLE
 $ amp
 Playback paused. Type 'amp' again to resume.
@@ -43,23 +43,22 @@ Showing video in an external window.
 
 #+END_EXAMPLE
 
-
 * Installation
 ** Requirements
 - Python 3.3+ or Python 2.7
-- A up-to-date version of [[https://mpv.io/installation/][mpv]]
-- An up-to-date version of Python build tools: pip, setuptools, etc.
+- [[https://mpv.io/installation/][mpv]]
+- Python build tools: pip, setuptools, etc.
 
 Once you have all of these, amp can be installed from pip (with root privileges).
 #+BEGIN_EXAMPLE
 # pip install amp-player
 #+END_EXAMPLE
 
-Alternatively, you can run the build script yourself:
+Alternatively, you can build it yourself:
 #+BEGIN_EXAMPLE
 $ git clone https://github.com/nivekuil/amp.git
 $ cd amp
-# python setup.py install
+$ python setup.py install
 #+END_EXAMPLE
 
 * Planned features/fixes
