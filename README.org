@@ -1,9 +1,8 @@
 Amp (asynchronous music player) is a command-line interface to YouTube that lets you find, play, and pause music with minimal disturbance to your workflow.  It takes arguments in the form of a YouTube search query and plays the first result in a background process.
 
 * Usage
-1. Open terminal
-2. Type "amp" + title, artist, lyrics, etc. phrased as a search query
-3. Close terminal or continue working without interruption
+1. Open terminal (recommended: a drop-down one like [[https://github.com/Guake/guake][Guake]])
+2. Type "amp " + title, artist, lyrics, etc. phrased as a search query
 ** Examples
 #+BEGIN_EXAMPLE
 $ amp portugal hard being wizard
@@ -14,7 +13,7 @@ Stopping current song..
 Now playing: Shadow of the Colossus OST (Playstation 2) [01:15:51]
 #+END_EXAMPLE
 
-YouTube's search engine is also (mostly) smart enough to search by lyrics:
+amp also works with lyrics, as long as there's a video with lyrics in the description:
 #+BEGIN_EXAMPLE
 $ amp ah look at all the lonely people
 Now playing: the beatles "eleanor Rigby" with lyrics [00:02:07]
