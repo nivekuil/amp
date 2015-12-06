@@ -40,7 +40,7 @@ def main():
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
 
-    parser.add_argument('--version', action='version', version='%(prog)s 0.1.14')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.15')
 
     args = parser.parse_known_args()
 
@@ -53,7 +53,6 @@ def main():
 
         sys.exit(0)
 
-    
     # If amp is called with no search terms, try to pause playback.
     if len(args[1]) == 0:
         try:

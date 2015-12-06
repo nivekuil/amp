@@ -11,7 +11,7 @@ elif sys.version_info[0] == 3:
 
 setup(
     name='amp-player',
-    version='0.1.14',
+    version='0.1.15',
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',

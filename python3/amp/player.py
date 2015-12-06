@@ -26,6 +26,7 @@ class Player:
 
     def __init__(self, url, show_video=False, verbose=False):
         self.pidfile = PIDFILE
+        self.infofile = INFOFILE
         self.url = url
         self.show_video = show_video
         self.verbose = verbose
@@ -38,18 +39,19 @@ class Player:
         video_data = pafy.new(self.url)
         print("Now playing: " + video_data.title + " [" + video_data.duration +
               "]")
- # Handle passed-in options
+
+        # Handle passed-in options
         if self.verbose:
             print("URL: " + self.url)
             print("Description: " + video_data.description)
         if self.show_video:
             print("Showing video in an external window.")
 
-        # If the info file doesn't exist don't remove it
-        try:
-            os.remove(INFOFILE)
-        except OSError:
-            pass
+        # # If the info file doesn't exist don't remove it
+        # try:
+        #     os.remove(INFOFILE)
+        # except OSError:
+        #     pass
 
         with open(INFOFILE, 'w+') as f:
 
@@ -98,14 +100,15 @@ Duration: %s
         os.dup2(si.fileno(), sys.stdin.fileno())
 
         # write pidfile
-        atexit.register(self.delpid)
+        atexit.register(self.delete_info_files)
 
         pid = str(os.getpid())
         with open(self.pidfile, 'w+') as f:
             f.write(pid + '\n')
 
-    def delpid(self):
+    def delete_info_files(self):
         os.remove(self.pidfile)
+        os.remove(self.infofile)
 
     def start(self):
         try:
@@ -118,7 +121,7 @@ Duration: %s
         if pid:
             print("Stopping current song..")
             kill_process_tree(pid)
-            self.delpid()
+            self.delete_info_files()
 
         self.print_info()
 
@@ -152,7 +155,7 @@ Duration: %s
             e = str(err.args)
             if e.find("No such process") > 0:
                 if os.path.exists(self.pidfile):
-                    os.remove(self.pidfile)
+                    self.delete_info_files()
                 else:
                     print(str(err.args))
                     sys.exit(1)
