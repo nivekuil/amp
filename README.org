@@ -1,8 +1,9 @@
-Amp (asynchronous music player) is a command-line interface to YouTube that lets you find, play, and pause music with minimal disturbance to your workflow.  It takes arguments in the form of a YouTube search query and plays the first result in a background process.
+Amp (asynchronous music player) is a command-line interface to YouTube that lets you find, play, and pause music with minimal effort.  It takes arguments in the form of a YouTube search query and plays the first result in a background process.
 
 * Usage
-1. Open terminal (recommended: a drop-down one like [[https://github.com/Guake/guake][Guake]])
+1. Open terminal
 2. Type "amp " + title, artist, lyrics, etc.
+3. Enjoy the music!
 ** Examples
 Phrase stuff as a search query - be lazy!
 #+BEGIN_EXAMPLE
@@ -45,7 +46,7 @@ Showing video in an external window.
 
 * Installation
 ** Requirements
-- Python 3.3+ or Python 2.7
+- Python 3.3+ (recommended) or Python 2.7
 - [[https://mpv.io/installation/][mpv]]
 - Python build tools: pip, setuptools, etc.
 
@@ -63,12 +64,12 @@ $ python setup.py install
 
 * Planned features/fixes
 - List multiple results to choose a song from
-- Filter by duration
+- Filters: by duration, quality, views, etc.
 - Queue songs
 - Song history
 - Handle invalid options more gracefully
 - When external dependency fails, show error output
-- Probably rewrite this so it uses sockets/some kind of networking protocol instead of OS-level process control
+- Possiblty rewrite this to use sockets/REST instead of OS-level process control
 
 * Troubleshooting
-If playback ends abnormally before anything starts playing, it might be an issue with one of amp's dependencies.  Try using ==amp --verbose== to get the URL of the video, and then play the URL with mpv directly.  If that works, then please submit an issue (or pull request!).
+If playback ends abnormally before anything starts playing, it might be an issue with one of amp's dependencies.  Try using ==amp --verbose== to get the URL of the video, and then play the URL with mpv directly.  If that works, then please submit an issue (or pull request).
