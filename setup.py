@@ -5,13 +5,15 @@ from distutils.extension import Extension
 if sys.version_info[0] == 2:
     print("Python 2.x detected.")
     base_dir = 'python2'
+    pyversion = '2'
 elif sys.version_info[0] == 3:
     print("Python 3.x detected.")
     base_dir = 'python3'
+    pyversion = '3'
 
 setup(
     name='amp-player',
-    version='0.1.15',
+    version='0.1.15-' + pyversion,
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',

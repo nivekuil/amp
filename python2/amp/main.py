@@ -81,7 +81,7 @@ def main():
                                           query_string)
 
     search_results = re.findall(ur'href=\"\/watch\?v=(.{11})',
-                                html_content.read()
+                                html_content.read())
 
     url = u"https://www.youtube.com/watch?v=" + search_results[0]
     player = Player(pidfile, url,
