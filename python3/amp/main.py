@@ -4,7 +4,7 @@ import sys
 
 import argparse
 import pafy
-from .mpv_player import MPVPlayer
+from .player import Player
 from .process import kill_process_tree
 from .process import toggle_process_tree
 from .util import get_search_results
@@ -35,7 +35,7 @@ def main():
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
     parser.add_argument('--version', action='version',
-                        version='%(prog)s 0.1.15')
+                        version='%(prog)s 0.1.19')
 
     args = parser.parse_known_args()
 
@@ -87,9 +87,8 @@ def main():
     search_results = get_search_results(input)
     url = 'https://www.youtube.com/watch?v=' + search_results[0]
 
-    player = MPVPlayer(url, opts)
-    import threading
-    threading.Thread(target=player.start,daemon=True).start()
+    player = Player(url, show_video=args[0].v, verbose=args[0].verbose)
+    player.start()
 
 if __name__ == '__main__':
     sys.exit(main())
