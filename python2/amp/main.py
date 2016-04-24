@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 from __future__ import with_statement
 from __future__ import absolute_import
 import os
@@ -21,7 +21,6 @@ USAGE = u"""Usage: amp [SEARCH TERMS]
 Pass search terms to YouTube and play the first result in a background process.
 Call again with no arguments to stop playback.
 """
-
 
 def main():
     pidfile = u"/tmp/amp.pid"
@@ -77,7 +76,7 @@ def main():
 
     query_string = urlencode({u"search_query": input})
 
-    html_content = urlopen(u"https://www.youtube.com/results?" +
+    html_content = urlopen(u"https://www.youtube.com/results?search_query=" +
                                           query_string)
 
     search_results = re.findall(ur'href=\"\/watch\?v=(.{11})',
