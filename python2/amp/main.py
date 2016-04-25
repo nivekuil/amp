@@ -39,7 +39,7 @@ def main():
     parser.add_argument(u'--verbose', action=u'store_true',
                         help=u'show verbose output')
 
-    parser.add_argument(u'--version', action=u'version', version=u'%(prog)s 0.1.14')
+    parser.add_argument(u'--version', action=u'version', version=u'%(prog)s 0.1.19-2')
 
     args = parser.parse_known_args()
 
@@ -76,8 +76,8 @@ def main():
 
     query_string = urlencode({u"search_query": input})
 
-    html_content = urlopen(u"https://www.youtube.com/results?search_query=" +
-                                          query_string)
+    html_content = urlopen(u"https://www.youtube.com/results?" +
+                           query_string)
 
     search_results = re.findall(ur'href=\"\/watch\?v=(.{11})',
                                 html_content.read())
