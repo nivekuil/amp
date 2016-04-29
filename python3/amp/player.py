@@ -167,7 +167,7 @@ Duration: %s
 
     def run(self):
         if self.show_video:
-            subprocess_args = ['mpv', self.url, "--really-quiet"]
+            subprocess_args = ['mpv', self.url, "--really-quiet", "--fs"]
         else:
             subprocess_args = ['mpv', self.url, "--really-quiet", "--no-video"]
         try:

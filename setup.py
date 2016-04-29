@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
 
 setup(
     name='amp-player',
-    version='0.1.19-' + pyversion,
+    version='0.1.20-' + pyversion,
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',

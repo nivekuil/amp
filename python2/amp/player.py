@@ -149,7 +149,7 @@ class Player(object):
 
     def run(self):
         if self.show_video:
-            subprocess_args = [u'mpv', self.url, u"--really-quiet"]
+            subprocess_args = [u'mpv', self.url, u"--really-quiet", u"--fs"]
         else:
             subprocess_args = [u'mpv', self.url, u"--really-quiet", u"--no-video"]
         try:
