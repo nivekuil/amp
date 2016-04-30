@@ -35,7 +35,7 @@ def main():
     parser.add_argument('--verbose', action='store_true',
                         help='show verbose output')
     parser.add_argument('--version', action='version',
-                        version='%(prog)s 0.1.20-3')
+                        version='%(prog)s 0.1.21-3')
 
     args = parser.parse_known_args()
 
