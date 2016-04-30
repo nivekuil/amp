@@ -72,4 +72,4 @@ $ python setup.py install
 - Possiblty rewrite this to use sockets/REST instead of OS-level process control
 
 * Troubleshooting
-If playback ends abnormally before anything starts playing, it might be an issue with one of amp's dependencies.  Try using ==amp --verbose== to get the URL of the video, and then play the URL with mpv directly.  If that works, then please submit an issue (or pull request).
+If playback ends abnormally before anything starts playing, it might be an issue with one of amp's dependencies.  Try using =amp --verbose= to get the URL of the video, and then play the URL with mpv directly.  If that works, then please submit an issue (or pull request).
