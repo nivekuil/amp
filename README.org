@@ -50,7 +50,7 @@ Showing video in an external window.
 - [[https://mpv.io/installation/][mpv]]
 - Python build tools: pip, setuptools, etc.
 
-Once you have all of these, amp can be installed from pip (with root privileges).
+The Python 3 version is recommended, and development is focused on that version first.  Once you have all of these, amp can be installed from pip (with root privileges).
 #+BEGIN_EXAMPLE
 # pip install amp-player
 #+END_EXAMPLE
