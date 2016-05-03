@@ -39,7 +39,7 @@ def main():
     parser.add_argument(u'--verbose', action=u'store_true',
                         help=u'show verbose output')
 
-    parser.add_argument(u'--version', action=u'version', version=u'%(prog)s 0.1.21-2')
+    parser.add_argument(u'--version', action=u'version', version=u'%(prog)s 0.1.24-2')
 
     args = parser.parse_known_args()
 
@@ -55,10 +55,14 @@ def main():
                     kill_process_tree(pid)
                     os.remove(pidfile)
                     print u'Killed playback process.'
+                    return
 
                 # Otherwise, pause or resume the process tree.
                 else:
-                    toggle_process_tree(pid)
+                    try:
+                        toggle_process_tree(pid)
+                    except:
+                        print u'pidfile invalid; was amp killed uncleanly?'
 
         except:
             # If the pidfile doesn't exist, then playback is not happening.

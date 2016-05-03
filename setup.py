@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
 
 setup(
     name='amp-player',
-    version='0.1.21-' + pyversion,
+    version='0.1.24-' + pyversion,
     description='Asynchronous command-line YouTube interface',
     keywords=["music", "audio", "video", "stream", "youtube"],
     url='https://github.com/nivekuil/amp',
@@ -26,7 +26,7 @@ setup(
     package_dir={
         'amp' : base_dir + '/amp'
     },
-    install_requires=['mpv', 'pafy', 'psutil'],
+    install_requires=['pafy', 'psutil>=4'],
     classifiers = [
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
