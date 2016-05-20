@@ -47,12 +47,6 @@ class Player:
         if self.show_video:
             print("Showing video in an external window.")
 
-        # # If the info file doesn't exist don't remove it
-        # try:
-        #     os.remove(INFOFILE)
-        # except OSError:
-        #     pass
-
         with open(INFOFILE, 'w+') as f:
 
             f.write("""Description: %s\n
@@ -166,10 +160,11 @@ Duration: %s
         self.start()
 
     def run(self):
+        subprocess_args = ["mpv", self.url, "--really-quiet"]
         if self.show_video:
-            subprocess_args = ['mpv', self.url, "--really-quiet", "--fs"]
+            subprocess_args.append("--fs")
         else:
-            subprocess_args = ['mpv', self.url, "--really-quiet", "--no-video"]
+            subprocess_args.append("--no-video")
         try:
             subprocess.call(subprocess_args)
         except OSError as e:

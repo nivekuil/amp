@@ -74,7 +74,7 @@ class Player(object):
             sys.exit(1)
 
         # redirect standard file descriptors
-        sys.stdout.flush()
+        sys.stdout.flush()      #
         sys.stderr.flush()
         si = open(os.devnull, u'r')
         so = open(os.devnull, u'a+')
@@ -148,10 +148,11 @@ class Player(object):
         self.start()
 
     def run(self):
+        subprocess_args = [u'mpv', self.url, u"--really-quiet"]
         if self.show_video:
-            subprocess_args = [u'mpv', self.url, u"--really-quiet", u"--fs"]
+            subprocess_args.append(u"--fs")
         else:
-            subprocess_args = [u'mpv', self.url, u"--really-quiet", u"--no-video"]
+            subprocess_args.append(u"--no-video")
         try:
             subprocess.call(subprocess_args)
         except OSError as e:
