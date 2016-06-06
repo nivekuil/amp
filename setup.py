@@ -26,7 +26,7 @@ setup(
     package_dir={
         'amp' : base_dir + '/amp'
     },
-    install_requires=['pafy', 'psutil>=4'],
+    install_requires=['pafy', 'psutil>=4', 'youtube-dl>2016.5'],
     classifiers = [
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
